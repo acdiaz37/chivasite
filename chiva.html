@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fiesta de San Juan y San Pedro 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e63946;     /* Rojo cálido fuerte */
+            --secondary: #f1faee;   /* Blanco azulado suave */
+            --accent: #a8dadc;      /* Azul pastel */
+            --dark: #1d3557;        /* Azul oscuro profundo */
+            --light: #FFFFFF;       /* Blanco */
+            --gray: #457b9d;        /* Azul medio-grisáceo */
+            --bg-main: #f1faee;     /* Fondo general claro */
+            --bg-card: rgba(241, 250, 238, 0.95); /* Fondo translúcido */
+            --dark-red: #5c1414;   /* Rojo oscuro más profundo */
+            --button-gradient-start: #5c1414;
+            --button-gradient-end: #7a1a1a;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-main);
+            min-height: 100vh;
+            color: var(--dark);
+            position: relative;
+        }
+
+        /* Fondo con gradiente sutil */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(230, 57, 70, 0.03) 0%, 
+                    rgba(241, 250, 238, 0.03) 50%, 
+                    rgba(168, 218, 220, 0.03) 100%);
+            z-index: -2;
+        }
+
+        /* Patrón de puntos sutiles */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(29, 53, 87, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+
+        /* Layout principal 40/60 */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Sección izquierda - Imagen */
+        .left-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 50%, #383838 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-right: 1px solid rgba(230, 57, 70, 0.2);
+            animation: slideInLeft 0.8s ease-out;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .chiva-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .chiva-frame {
+            width: 90%;
+            height: 90%;
+            background: var(--bg-card);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(230, 57, 70, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(29, 53, 87, 0.05);
+            padding: 0;
+        }
+
+        .chiva-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.15);
+            border-color: var(--primary);
+        }
+
+        .chiva-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+        }
+
+        /* Sección derecha - Contenido */
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            padding: 25px 40px;
+            gap: 15px;
+            overflow-y: auto;
+            animation: slideInRight 0.8s ease-out;
+            justify-content: center;
+            height: 100%;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Header compacto */
+        .header {
+            text-align: center;
+        }
+
+        .event-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--light);
+            border-radius: 100px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .event-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--primary);
+            letter-spacing: 5px;
+            line-height: 1.1;
+            position: relative;
+            display: block;
+            text-align: center;
+            padding-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(29, 53, 87, 0.1);
+            animation: titlePop 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes titlePop {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .event-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+            animation: expandWidth 1s ease-out 0.5s both;
+        }
+
+        @keyframes expandWidth {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 120px;
+                opacity: 1;
+            }
+        }
+
+        .event-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .event-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Countdown compacto - rojo oscuro más profundo y texto blanco */
+        .countdown-section {
+            background: var(--dark-red);
+            color: var(--light);
+            backdrop-filter: none;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 
+                0 10px 30px rgba(92, 20, 20, 0.6),
+                0 0 0 1px rgba(122, 26, 26, 0.8);
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--light);
+            margin-bottom: 12px;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--light);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .countdown-value {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1;
+            background: none;
+            -webkit-text-fill-color: var(--light);
+            color: var(--light);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .countdown-unit {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3px;
+        }
+
+        .countdown-section .cta-button {
+            background: #8f2a2a;
+            color: var(--light);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(143, 42, 42, 0.5);
+            width: 100%;
+        }
+
+        .countdown-section .cta-button:hover {
+            background: #b03b3b;
+            box-shadow: 0 6px 20px rgba(176, 59, 59, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Panel de asistencia compacto */
+        .attendance-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 
+                0 10px 30px rgba(29, 53, 87, 0.04),
+                0 0 0 1px rgba(29, 53, 87, 0.04);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 1px;
+        }
+
+        .attendance-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .attendance-card {
+            background: linear-gradient(135deg, rgba(200, 200, 200, 0.9), rgba(220, 220, 220, 0.8));
+            border-radius: 10px;
+            padding: 10px 6px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(29, 53, 87, 0.05);
+        }
+
+        .attendance-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .attendance-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(29, 53, 87, 0.08);
+        }
+
+        .attendance-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .attendance-icon {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .attendance-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+        }
+
+        .attendance-label {
+            font-size: 0.55rem;
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            line-height: 1.1;
+        }
+
+        /* Colores específicos */
+        .women-confirmed { color: var(--primary); }
+        .women-unconfirmed { color: #f4a3a8; }
+        .men-confirmed { color: var(--dark); }
+        .men-unconfirmed { color: var(--gray); }
+        .families { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 35% 65%;
+            }
+
+            .chiva-frame {
+                width: 95%;
+                height: 95%;
+                padding: 0;
+            }
+
+            .event-title {
+                font-size: 3rem;
+            }
+
+            .right-section {
+                padding: 20px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                height: auto;
+                min-height: 100vh;
+                overflow: visible;
+            }
+
+            .left-section {
+                height: 350px;
+                border-right: none;
+                border-bottom: 1px solid rgba(230, 57, 70, 0.1);
+                position: relative;
+                z-index: 1;
+            }
+
+            .chiva-container {
+                padding: 0;
+                height: 100%;
+            }
+
+            .chiva-frame {
+                width: 95%;
+                height: 95%;
+                padding: 0;
+            }
+
+            .event-title {
+                font-size: 2rem;
+                padding-bottom: 15px;
+            }
+
+            .event-title::after {
+                width: 80px;
+            }
+
+            @keyframes expandWidth {
+                to {
+                    width: 80px;
+                    opacity: 1;
+                }
+            }
+
+            .right-section {
+                padding: 20px;
+                gap: 15px;
+                height: auto;
+                overflow-y: visible;
+                position: relative;
+                z-index: 2;
+                background: var(--bg-main);
+            }
+
+            .event-info {
+                font-size: 0.8rem;
+                gap: 10px;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .attendance-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .attendance-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .countdown-section,
+            .attendance-section {
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 1rem;
+            }
+
+            .attendance-card {
+                padding: 12px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-title {
+                font-size: 1.75rem;
+                letter-spacing: 1px;
+            }
+
+            .chiva-frame {
+                width: 98%;
+                height: 98%;
+                padding: 0;
+            }
+
+            .left-section {
+                height: 280px;
+            }
+
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+
+            .attendance-number {
+                font-size: 1.3rem;
+            }
+
+            .event-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* Animación de pulso sutil */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .countdown-value {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Scrollbar personalizada */
+        .right-section::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .right-section::-webkit-scrollbar-track {
+            background: rgba(29, 53, 87, 0.05);
+            border-radius: 3px;
+        }
+
+        .right-section::-webkit-scrollbar-thumb {
+            background: rgba(230, 57, 70, 0.3);
+            border-radius: 3px;
+        }
+
+        .right-section::-webkit-scrollbar-thumb:hover {
+            background: rgba(230, 57, 70, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <!-- Sección izquierda - 40% -->
+        <div class="left-section">
+            <div class="chiva-container">
+                <div class="chiva-frame">
+                    <img src="C:\Users\adria\OneDrive\Escritorio\sanpedropage\02aa9ea0-555d-4b8c-af52-447a26c33b15.png" alt="Chiva Rumbera" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección derecha - 60% -->
+        <div class="right-section">
+            <header class="header">
+                <span class="event-badge">🎉 Celebración Especial</span>
+                <h1 class="event-title">🚌🎈Chiva Rumbera🎈🚌<br /> 🎂Cumpleaños Adrián🎊</h1>
+                <div class="event-info">
+                    <span>📅 5 de Julio 2025</span>
+                    <span>🕕 6:00 PM</span>
+                    <span>📍 Ibagué, Tolima</span>
+                </div>
+            </header>
+
+            <div class="countdown-section">
+                <p class="countdown-label">⏰ Cuenta Regresiva</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-unit">Días</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-unit">Horas</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-unit">Min</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-unit">Seg</div>
+                    </div>
+                </div>
+                <button class="cta-button" onclick="window.open('https://wa.me/573176695755?text=confirmo%20asistencia', '_blank')">Confirmar Asistencia →</button>
+            </div>
+
+            <section class="attendance-section">
+                <h2 class="section-title">
+                    <span>📊</span>
+                    <span>Panel de Asistencia</span>
+                </h2>
+                <div class="attendance-grid">
+                    <div class="attendance-card women-confirmed">
+                        <span class="attendance-icon">👩</span>
+                        <div class="attendance-number">24</div>
+                        <div class="attendance-label">Mujeres<br />Confirmadas</div>
+                    </div>
+                    <div class="attendance-card women-unconfirmed">
+                        <span class="attendance-icon">👩‍🦱</span>
+                        <div class="attendance-number">12</div>
+                        <div class="attendance-label">Mujeres<br />Sin Confirmar</div>
+                    </div>
+                    <div class="attendance-card men-confirmed">
+                        <span class="attendance-icon">👨</span>
+                        <div class="attendance-number">18</div>
+                        <div class="attendance-label">Hombres<br />Confirmados</div>
+                    </div>
+                    <div class="attendance-card men-unconfirmed">
+                        <span class="attendance-icon">👨‍🦱</span>
+                        <div class="attendance-number">8</div>
+                        <div class="attendance-label">Hombres<br />Sin Confirmar</div>
+                    </div>
+                    <div class="attendance-card families">
+                        <span class="attendance-icon">👨‍👩‍👧‍👦</span>
+                        <div class="attendance-number">15</div>
+                        <div class="attendance-label">Familiares</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Función de conteo regresivo
+        function updateCountdown() {
+            const targetDate = new Date('2025-07-05T18:00:00-05:00');
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                animateValue('days', days);
+                animateValue('hours', hours);
+                animateValue('minutes', minutes);
+                animateValue('seconds', seconds);
+            } else {
+                document.getElementById('countdown').innerHTML =
+                    '<h2 style="font-size: 1.25rem; color: var(--light);">🎉 ¡La fiesta ha comenzado! 🎉</h2>';
+            }
+        }
+
+        // Animación suave de números
+        function animateValue(id, value) {
+            const element = document.getElementById(id);
+            const current = parseInt(element.textContent);
+            if (current !== value) {
+                element.textContent = String(value).padStart(2, '0');
+                element.style.animation = 'none';
+                setTimeout(() => {
+                    element.style.animation = 'pulse 3s ease-in-out infinite';
+                }, 10);
+            }
+        }
+
+        // Inicializar
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Botón CTA
+        document.querySelector('.cta-button').addEventListener('click', function () {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+                alert('¡Gracias! Te contactaremos pronto con más detalles.');
+            }, 150);
+        });
+
+        // Animación de entrada para las tarjetas
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.attendance-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
