@@ -632,22 +632,32 @@
                         <div class="countdown-unit">Seg</div>
                     </div>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
-                <input type="text" id="userName" placeholder="Escribe tu nombre aquí" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 250px; text-align: center;">
-                <button class="cta-button" onclick="sendWhatsApp()">Confirmar Asistencia →</button>
-                </div>
-
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
+  <input 
+    type="text" 
+    id="userName" 
+    placeholder="📋 Escribe tu nombre y apellido aquí" 
+    style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 250px; text-align: center;">
+  <button class="cta-button" onclick="sendWhatsApp()">Confirmar Asistencia →</button>
+</div>
 
 <script>
   function sendWhatsApp() {
     const name = document.getElementById('userName').value.trim();
-    const message = `🎉 Confirmo asistencia.\n🙋‍♂️ Mi nombre es: ${name || 'Nombre no ingresado'} 😊`;
+
+    if (!name) {
+      alert("Por favor escribe tu nombre y apellido antes de confirmar. 📋");
+      return;
+    }
+
+    const message = `🎉 Confirmo asistencia.\n🙋‍♂️ Mi nombre es: ${name} 😊`;
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = '573176695755';
     const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(url, '_blank');
   }
 </script>
+
 
             </div>
 
