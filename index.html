@@ -632,8 +632,11 @@
                         <div class="countdown-unit">Seg</div>
                     </div>
                 </div>
-                <input type="text" id="userName" placeholder="Escribe tu nombre aquí" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
-<button class="cta-button" onclick="sendWhatsApp()">Confirmar Asistencia →</button>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <input type="text" id="userName" placeholder="Escribe tu nombre aquí" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 250px; text-align: center;">
+                <button class="cta-button" onclick="sendWhatsApp()">Confirmar Asistencia →</button>
+                </div>
+
 
 <script>
   function sendWhatsApp() {
